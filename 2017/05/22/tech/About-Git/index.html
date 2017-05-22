@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="吕蒙正," />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -84,43 +84,28 @@
 
 
 
-<meta name="description" content="天有不测风云，人有旦夕祸福。
-蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。
-马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。
-盖闻：人生在世，富贵不能**，贫贱不能移。
-文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。
-颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。
-尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。
-张良原是布衣，萧何称谓县吏。
-晏子身无五尺，封作齐国宰相；
-孔明卧居草庐，能">
+<meta name="description" content="1，下载git，mac有两种方式，一种是homebrew,一种是xcode自带的；
+2，创建版本库，也就是仓库，新建一个文件夹，git init 初始化；
+3，一般而言，项目所在目录即为工作区，工作区有一个隐藏目录.git，是Git的版本库。
+版本库中最重要的就是stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个
+分支master，以及指向master的一个指针HEAD。另外">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《命运赋》">
-<meta property="og:url" content="https://zquanx.github.io/2017/05/17/reproduce/《命运赋》/index.html">
+<meta property="og:title" content="About Git">
+<meta property="og:url" content="https://zquanx.github.io/2017/05/22/tech/About-Git/index.html">
 <meta property="og:site_name" content="spring is coming">
-<meta property="og:description" content="天有不测风云，人有旦夕祸福。
-蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。
-马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。
-盖闻：人生在世，富贵不能**，贫贱不能移。
-文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。
-颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。
-尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。
-张良原是布衣，萧何称谓县吏。
-晏子身无五尺，封作齐国宰相；
-孔明卧居草庐，能">
-<meta property="og:updated_time" content="2017-05-17T14:40:34.000Z">
+<meta property="og:description" content="1，下载git，mac有两种方式，一种是homebrew,一种是xcode自带的；
+2，创建版本库，也就是仓库，新建一个文件夹，git init 初始化；
+3，一般而言，项目所在目录即为工作区，工作区有一个隐藏目录.git，是Git的版本库。
+版本库中最重要的就是stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个
+分支master，以及指向master的一个指针HEAD。另外">
+<meta property="og:updated_time" content="2017-05-22T15:15:46.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《命运赋》">
-<meta name="twitter:description" content="天有不测风云，人有旦夕祸福。
-蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。
-马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。
-盖闻：人生在世，富贵不能**，贫贱不能移。
-文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。
-颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。
-尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。
-张良原是布衣，萧何称谓县吏。
-晏子身无五尺，封作齐国宰相；
-孔明卧居草庐，能">
+<meta name="twitter:title" content="About Git">
+<meta name="twitter:description" content="1，下载git，mac有两种方式，一种是homebrew,一种是xcode自带的；
+2，创建版本库，也就是仓库，新建一个文件夹，git init 初始化；
+3，一般而言，项目所在目录即为工作区，工作区有一个隐藏目录.git，是Git的版本库。
+版本库中最重要的就是stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个
+分支master，以及指向master的一个指针HEAD。另外">
 
 
 
@@ -141,10 +126,10 @@
 
 
 
-  <link rel="canonical" href="https://zquanx.github.io/2017/05/17/reproduce/《命运赋》/"/>
+  <link rel="canonical" href="https://zquanx.github.io/2017/05/22/tech/About-Git/"/>
 
 
-  <title> 《命运赋》 | spring is coming </title>
+  <title> About Git | spring is coming </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +269,7 @@
             
             
               
-                《命运赋》
+                About Git
               
             
           </h1>
@@ -296,8 +281,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-05-17T22:36:56+08:00" content="2017-05-17">
-              2017-05-17
+            <time itemprop="dateCreated" datetime="2017-05-22T23:12:31+08:00" content="2017-05-22">
+              2017-05-22
             </time>
           </span>
 
@@ -310,8 +295,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/转载/" itemprop="url" rel="index">
-                    <span itemprop="name">转载</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
                   </a>
                 </span>
 
@@ -343,34 +328,58 @@
       
 
       
-        <p>天有不测风云，人有旦夕祸福。</p>
-<p>蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。</p>
-<p>马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。</p>
-<p>盖闻：人生在世，富贵不能**，贫贱不能移。</p>
-<p>文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。</p>
-<p>颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。</p>
-<p>尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。</p>
-<p>张良原是布衣，萧何称谓县吏。</p>
-<p>晏子身无五尺，封作齐国宰相；</p>
-<p>孔明卧居草庐，能作蜀汉军师。</p>
-<p>楚霸虽雄，败于乌江自刎；汉王虽弱，竟有万里江山。</p>
-<p>李广有射虎之威，到老无封；冯唐有乘龙之才，一生不遇。</p>
-<p>韩信未遇之时，无一日三餐；及至遇行，腰悬三尺玉印；一旦时衰，死于阴人之手。</p>
-<p>有先贫而后富，有老壮而少衰。</p>
-<p>满腹文章，白发竟然不中；才疏学浅，少年及第登科。</p>
-<p>深院宫娥，运退反为妓妾；风流妓女，时来配作夫人。</p>
-<p>青春美女，却招愚蠢之夫；俊秀郎君，反配粗丑之妇。</p>
-<p>蛟龙未遇，潜水于鱼鳖之间；君子失时，拱手于小人之下。</p>
-<p>衣服虽破，常存仪礼之容；面带忧愁，每抱怀安之量。</p>
-<p>时遭不遇，只宜安贫守份；心若不欺，必然扬眉吐气。</p>
-<p>初贫君子，天然骨骼生成；乍富小人，不脱贫寒肌体。</p>
-<p>天不得时，日月无光；地不得时，草木不生；</p>
-<p>水不得时，风浪不平；人不得时，利运不通。</p>
-<p>注福注禄，命里已安排定，富贵谁不欲？</p>
-<p>人若不依根基八字，岂能为卿为相？</p>
-<p>吾昔寓居洛阳，朝求僧餐，暮宿破窖。思衣不可遮其体，思食不可济其饥。上人憎，下人厌，人道我贱，非我不弃也。</p>
-<p>今居朝堂，官至极品，位置三公，身虽鞠躬于一人之下，而列职于千万人之上。有挞百僚之杖，有斩鄙吝之剑。思衣而有罗锦千箱，思食而有珍馐百味。出则壮士执鞭，入则佳人捧觞。上人宠，下人拥。人道我贵，非我之能也，此乃时也、运也、命也。</p>
-<p>嗟呼！人生在世，富贵不可尽用，贫贱不可自欺。听由天地循环，周而复始焉。</p>
+        <p>1，下载git，mac有两种方式，一种是homebrew,一种是xcode自带的；</p>
+<p>2，创建版本库，也就是仓库，新建一个文件夹，git init 初始化；</p>
+<p>3，一般而言，项目所在目录即为工作区，工作区有一个隐藏目录.git，是Git的版本库。</p>
+<p>版本库中最重要的就是stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个</p>
+<p>分支master，以及指向master的一个指针HEAD。另外还有日志目录logs。</p>
+<p>4，git add 操作，将文件修改添加到暂存区；</p>
+<p>​     git commit操作，将暂存区的所有内容提交到当前分支。</p>
+<p>5，忽略某些文件时，需要编写.gitignore文件，并且需要提交到版本库，还可以对它做版本管理。</p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>​    git add <file>   </file></p>
+<p>​    git commit -m “xxx”   </p>
+<p>​    git status         查看仓库当前的状态   </p>
+<p>​    git diff <file>    查看文件修改</file></p>
+<p>​    git log [—pretty=oneline] [—abbrev-commit] 查看提交日志</p>
+<p>​    git reflog 记录每一次命令</p>
+<p>​    git reset -hard <commit_id>  |  head^  版本回退到某次提交</commit_id></p>
+<p>​       git checkout - - <file>   把文件在工作区的修改全部撤销</file></p>
+<p>​       git reset HEAD file  将添加到暂存区的修改回退到工作区</p>
+<p>​    git rm <file>    删掉文件</file></p>
+<p>​    git remote add origin git@server-name:path/repo-name.git   关联一个远程库</p>
+<p>​       git push -u origin master  第一次推送master分支到所有内容</p>
+<p>​       git push origin master  推送本地分支master到远程分支origin上</p>
+<p>​    git pull  拉取远程分支代码</p>
+<p>​    git clone  克隆远程仓库到本地   ssh/git 速度较快</p>
+<p>​    git checkout -b <branch>  创建 + 切换分支</branch></p>
+<p>​    git branch <branch>  创建分支</branch></p>
+<p>​       git checkout <branch>  切换分支</branch></p>
+<p>​    git branch   查看分支</p>
+<p>​    git merge <branch> 合并某分支到当前分支</branch></p>
+<p>​    git merge —no-ff -m ”xxx” <branch>   禁用Fast forward模式进行合并，在历史中显示</branch></p>
+<p>​    git branch -d <branch>   删除分支</branch></p>
+<p>​    git log —graph  查看分支合并图</p>
+<p>​    git stash  工作区还未提交，隐藏工作现场</p>
+<p>​    git stash list  查看工作现场</p>
+<p>​    git stash apply stash@{0}   恢复指定的stash，stash内容并不删除</p>
+<p>​    git stash drop  删除工作现场</p>
+<p>​    git stash pop   恢复工作现场，同时删除stash内容</p>
+<p>​    git branch -D <branch>   强行删除一个没有被合并过的分支</branch></p>
+<p>​    git remote -v  查看远程库信息，如果没有推送权限，看不到push地址</p>
+<p>​    git checkout -b <branch-name> origin/<branch-name>   在本地创建和远程分支对应的分支</branch-name></branch-name></p>
+<p>​    git branch —set-upstream <branch-name> origin/<branch-name>  建立本地分支和远程分支的关联</branch-name></branch-name></p>
+<p>​    git tag  查看所有标签</p>
+<p>​    git show <tag-name>   查看标签详情</tag-name></p>
+<p>​    git tag <tag-name> <commit_id>   为某次提交打标签</commit_id></tag-name></p>
+<p>​    git tag -a <tag-name> -m “xxx” <commit_id>   -a指定标签名，-m指定说明文字</commit_id></tag-name></p>
+<p>​    git tag -s <tag-name> -m “xxx” <commit_id>   -s 用私钥签名一个标签  （需安装gpg）</commit_id></tag-name></p>
+<p>​    git tag -d <tag-name>   删除标签</tag-name></p>
+<p>​    git push origin <tag-name>  推送标签到远程</tag-name></p>
+<p>​    git push origin —tags  推送全部尚未推送到远程的本地标签</p>
+<p>​    git tag -d <tag-name> ; git push origin :refs/tags/<tag-name>  删除远程标签</tag-name></tag-name></p>
+<p>​    git config —global alias.st status   配置别名</p>
+<p>​    </p>
+<p>​    </p>
 
       
     </div>
@@ -393,7 +402,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/吕蒙正/" rel="tag">#吕蒙正</a>
+            <a href="/tags/Git/" rel="tag">#Git</a>
           
         </div>
       
@@ -402,17 +411,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/10/tech/other/Markdown笔记/" rel="next" title="Markdown笔记">
-                <i class="fa fa-chevron-left"></i> Markdown笔记
+              <a href="/2017/05/17/reproduce/《命运赋》/" rel="next" title="《命运赋》">
+                <i class="fa fa-chevron-left"></i> 《命运赋》
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/22/tech/About-Git/" rel="prev" title="About Git">
-                About Git <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -526,7 +531,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a></li></ol></div>
             
           </div>
         </section>
