@@ -89,12 +89,12 @@
 字节流一个字节一个字节读取/写出输入流：InputStream    方法：        int read() //读取一个字节">
 <meta property="og:type" content="article">
 <meta property="og:title" content="I/O流">
-<meta property="og:url" content="https://zquanx.github.io/2017/02/06/tech/java/IO流/index.html">
+<meta property="og:url" content="https://zquanx.github.io/2017/02/06/tech/IO流/index.html">
 <meta property="og:site_name" content="spring is coming">
 <meta property="og:description" content="①以程序为参照向程序中写数据，即输入流；InputStream/Reader  方法：read()从程序向外写数据，即输出流；OutputStream/Writer 方法：write()
 ②在关闭输出流之前，应调用flush()方法将缓冲区数据全部写出.
 字节流一个字节一个字节读取/写出输入流：InputStream    方法：        int read() //读取一个字节">
-<meta property="og:updated_time" content="2017-05-09T15:26:15.000Z">
+<meta property="og:updated_time" content="2017-05-22T15:24:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="I/O流">
 <meta name="twitter:description" content="①以程序为参照向程序中写数据，即输入流；InputStream/Reader  方法：read()从程序向外写数据，即输出流；OutputStream/Writer 方法：write()
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="https://zquanx.github.io/2017/02/06/tech/java/IO流/"/>
+  <link rel="canonical" href="https://zquanx.github.io/2017/02/06/tech/IO流/"/>
 
 
   <title> I/O流 | spring is coming </title>
@@ -296,18 +296,6 @@
 
                 
                 
-                  ， 
-                
-
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
 
               
             </span>
@@ -339,7 +327,7 @@
 <h4 id="字节流"><a href="#字节流" class="headerlink" title="字节流"></a>字节流</h4><p>一个字节一个字节读取/写出<br>输入流：InputStream<br>    方法：<br>        int read() //读取一个字节<br>        int read(byte[] buffer)<br>        int read(byte[] buffer,int offset,int length)<br>        void close()<br>        long skip(long n)<br>输出流：OutputStream<br>        void write(int b)<br>        void write(byte[] b)<br>        void write(byte[] b,int off,int len)<br>        void close()<br>        void flush()//将输出流中缓冲的数据全部写出到目的地</p>
 <h4 id="字符流"><a href="#字符流" class="headerlink" title="字符流"></a>字符流</h4><p>一个字符一个字符读取/写出<br>输入流：Reader<br>        int read(）//读取一个字符<br>        int read(char[] cbuf)<br>        (省略其他，参照InputStream)<br>输出流：Writer<br>        void flush()<br>        (省略其他，参照OutputStream)</p>
 <h4 id="缓冲流"><a href="#缓冲流" class="headerlink" title="缓冲流"></a>缓冲流</h4><p>BufferedReader<br>    readLine();//一次读取一行字符，返回字符串类型</p>
-<p>BufferedWriter    </p>
+<p>BufferedWriter<br>​    </p>
 <h4 id="转换流"><a href="#转换流" class="headerlink" title="转换流"></a>转换流</h4><p>OutputStreamWriter/InputStreamReader</p>
 <p>OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(“d://dxxx.txt”,true),”GBK”);</p>
 <p>//可以直接写入字符串，不用一个字符一个字符写入</p>
@@ -349,8 +337,7 @@
 <p>ByteArrayInputStream bais = new ByteArrayInputStream();<br> //bais.available(); 可读取字节数</p>
 <p>DataInputStream dis = new DataInputStream(bais);<br>dis.readDouble();<br>dis.readBoolean();</p>
 <p>//注意：先写先读</p>
-<h4 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h4><p>PrintStream/PrintWriter<br>自带flush()功能，但，手动加上flush()更为保险</p>
-<p>可以打印log</p>
+<h4 id="打印流"><a href="#打印流" class="headerlink" title="打印流"></a>打印流</h4><p>PrintStream/PrintWriter<br>自带flush()功能，但，手动加上flush()更为保险<br>​<br>可以打印log</p>
 <h4 id="Object流"><a href="#Object流" class="headerlink" title="Object流"></a>Object流</h4><p>ObjectInputStream/ObjectOutputStream<br>可用来直接读取/写入 对象.</p>
 <p>实现序列化</p>
 <p>transient 标记属性时，序列化时忽略该属性.</p>
@@ -403,7 +390,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/02/12/tech/java/多线程/" rel="prev" title="线程">
+              <a href="/2017/02/12/tech/多线程/" rel="prev" title="线程">
                 线程 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -481,7 +468,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
