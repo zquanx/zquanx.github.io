@@ -322,14 +322,11 @@
       
         
           
-            <p>1，下载git，mac有两种方式，一种是homebrew,一种是xcode自带的；</p>
-<p>2，创建版本库，也就是仓库，新建一个文件夹，git init 初始化；</p>
-<p>3，一般而言，项目所在目录即为工作区，工作区有一个隐藏目录.git，是Git的版本库。</p>
-<p>版本库中最重要的就是stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个</p>
-<p>分支master，以及指向master的一个指针HEAD。另外还有日志目录logs。</p>
-<p>4，git add 操作，将文件修改添加到暂存区；</p>
-<p>​     git commit操作，将暂存区的所有内容提交到当前分支。</p>
-<p>5，忽略某些文件时，需要编写.gitignore文件，并且需要提交到版本库，还可以对它做版本管理。</p>
+            <p>1，下载git，mac有两种方式，一种是homebrew,一种是xcode自带的.</p>
+<p>2，创建版本库，也就是仓库，新建一个文件夹，git init 初始化.</p>
+<p>3，一般而言，项目所在目录即为工作区，工作区有一个隐藏目录.git，是Git的版本库。版本库中最重要的就是stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针HEAD。另外还有日志目录logs.</p>
+<p>4，git add 操作，将文件修改添加到暂存区；git commit操作，将暂存区的所有内容提交到当前分支.</p>
+<p>5，忽略某些文件时，需要编写.gitignore文件，并且需要提交到版本库，还可以对它做版本管理.</p>
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>​    git add <file>   </file></p>
 <p>​    git commit -m “xxx”   </p>
 <p>​    git status         查看仓库当前的状态   </p>
@@ -370,8 +367,8 @@
 <p>​    git tag -d <tag-name>   删除标签</tag-name></p>
 <p>​    git push origin <tag-name>  推送标签到远程</tag-name></p>
 <p>​    git push origin —tags  推送全部尚未推送到远程的本地标签</p>
-<p>​    git tag -d <tag-name> ; git push origin :refs/tags/<tag-name>  删除远程标签</tag-name></tag-name></p>
-<p>​    git config —global alias.st status   配置别名</p>
+<p>​    git tag -d <tag-name> ; git push origin :refs/tags/<tag-name>   删除远程标签</tag-name></tag-name></p>
+<p>​    git config —global alias.st status    配置别名</p>
 <p>​    </p>
 <p>​    </p>
 
