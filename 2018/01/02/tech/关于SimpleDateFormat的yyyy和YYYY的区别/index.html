@@ -96,7 +96,7 @@ yyyy 是年，YYYY是 weak year ,表示当前周所属的年份，12月31日是�
 elephant系统提供服务，token生成使用的是YYYY，其他系统调用该系统提供服务时需要校验token，使用的是yyyy，校验token时失败，之前一直没问题，问题发生在2017年12月31日。
 问题原因
 yyyy 是年，YYYY是 weak year ,表示当前周所属的年份，12月31日是周日，一个礼拜的第一天是周日，所以这一天属于2018年，导致时间不统一，生成的token不一">
-<meta property="og:updated_time" content="2018-03-05T03:28:54.444Z">
+<meta property="og:updated_time" content="2018-03-05T03:29:58.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于SimpleDateFormat的yyyy和YYYY的区别">
 <meta name="twitter:description" content="问题描述
@@ -338,10 +338,10 @@ yyyy 是年，YYYY是 weak year ,表示当前周所属的年份，12月31日是�
 
       
         <p>问题描述</p>
-<pre><code>elephant系统提供服务，token生成使用的是YYYY，其他系统调用该系统提供服务时需要校验token，使用的是yyyy，校验token时失败，之前一直没问题，问题发生在2017年12月31日。
-</code></pre><p>问题原因</p>
-<pre><code>yyyy 是年，YYYY是 weak year ,表示当前周所属的年份，12月31日是周日，一个礼拜的第一天是周日，所以这一天属于2018年，导致时间不统一，生成的token不一样，调用服务报错
-</code></pre>
+<p>elephant系统提供服务，token生成使用的是YYYY，其他系统调用该系统提供服务时需要校验token，使用的是yyyy，校验token时失败，之前一直没问题，问题发生在2017年12月31日。</p>
+<p>问题原因</p>
+<p>yyyy 是年，YYYY是 weak year ,表示当前周所属的年份，12月31日是周日，一个礼拜的第一天是周日，所以这一天属于2018年，导致时间不统一，生成的token不一样，调用服务报错</p>
+
       
     </div>
 
