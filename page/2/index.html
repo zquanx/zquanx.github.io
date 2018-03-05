@@ -86,12 +86,12 @@
 
 <meta name="description" content="if not you . who ?">
 <meta property="og:type" content="website">
-<meta property="og:title" content="winter is coming">
+<meta property="og:title" content="spring is coming">
 <meta property="og:url" content="https://zquanx.github.io/page/2/index.html">
-<meta property="og:site_name" content="winter is coming">
+<meta property="og:site_name" content="spring is coming">
 <meta property="og:description" content="if not you . who ?">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="winter is coming">
+<meta name="twitter:title" content="spring is coming">
 <meta name="twitter:description" content="if not you . who ?">
 
 
@@ -116,7 +116,7 @@
   <link rel="canonical" href="https://zquanx.github.io/page/2/"/>
 
 
-  <title> winter is coming </title>
+  <title> spring is coming </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -149,7 +149,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">winter is coming</span>
+      <span class="site-title">spring is coming</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -237,6 +237,141 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/02/12/tech/多线程/" itemprop="url">
+                  线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-12T08:23:35+08:00" content="2017-02-12">
+              2017-02-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="what"><a href="#what" class="headerlink" title="what"></a><em>what</em></h4><p>线程 ： 是一个程序内部的顺序控制流</p>
+<p>进程 ： 严格意义上讲是一个静态任务</p>
+<p>多线程 ： 在同一应用程序中有多个顺序流同时执行</p>
+<p>多进程 ： 在操作系统中能同时运行多个任务（程序）</p>
+<p>ps：在同一个时间点上，一个CPU只执行一个线程，所谓多线程同时运行，只不过是CPU执行速度较快，多线程的每个程序每个执行一会儿，而产生的错觉给人们以为是多线程同时执行,真正多线程是有双CPU或双核或更多.</p>
+<h4 id="多线程的java实现"><a href="#多线程的java实现" class="headerlink" title="多线程的java实现"></a><em>多线程的java实现</em></h4><p><strong>实现Runnable接口</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class TestThread &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Runner r = new Runner();</div><div class="line">		//r.run();//这样写，只是执行run()方法，并没有开启一个线程</div><div class="line">		Thread th = new Thread(r);</div><div class="line">		th.start();//开启一个新线程</div><div class="line">		for(int i=1;i&lt;=100;i++)&#123;</div><div class="line">			System.err.println(&quot;main thread = &quot; + i);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Runner implements Runnable&#123;</div><div class="line">	@Override</div><div class="line">	public void run() &#123;</div><div class="line">		for(int i=1;i&lt;=100;i++)&#123;</div><div class="line">			System.out.println(&quot;new thread : &quot; + i);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>继承Thread类</strong></p>
+<p>实际上，Thread类实现了Runnable接口，当继承了Thread类以后，则不能继承其他类，而Runnable<br>接口更加灵活，所以原则上，能使用Runnable接口尽量使用Runnable接口.</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a><em>使用</em></h4><h5 id="结束线程的办法"><a href="#结束线程的办法" class="headerlink" title="结束线程的办法"></a>结束线程的办法</h5><h6 id="①sleep-时会抛出InterruptException异常，当线程调用interrupt-方法时，线程抛异常，catch里面写”return-”，-结束该线程"><a href="#①sleep-时会抛出InterruptException异常，当线程调用interrupt-方法时，线程抛异常，catch里面写”return-”，-结束该线程" class="headerlink" title="①sleep()时会抛出InterruptException异常，当线程调用interrupt()方法时，线程抛异常，catch里面写”return;”， 结束该线程."></a>①sleep()时会抛出InterruptException异常，当线程调用interrupt()方法时，线程抛异常，catch里面写”return;”， 结束该线程.</h6><h6 id="②用逻辑控制，例如”while-flag-”，-当flag为false时结束线程"><a href="#②用逻辑控制，例如”while-flag-”，-当flag为false时结束线程" class="headerlink" title="②用逻辑控制，例如”while(flag)”， 当flag为false时结束线程."></a>②用逻辑控制，例如”while(flag)”， 当flag为false时结束线程.</h6><p>ps：极力不推荐使用stop()方法.</p>
+<h5 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h5><p>what：合并到主线程后，将等待该线程执行完毕后，再继续执行后续.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">public class TestThreadJoin &#123;</div><div class="line"></div><div class="line">public static void main(String[] args) &#123;</div><div class="line">		Runnal th = new Runnal();</div><div class="line">		th.start();</div><div class="line">		try &#123;</div><div class="line">			th.join();//合并到主线程后，将等待该线程执行完毕后，再继续执行后续</div><div class="line">		&#125; catch (InterruptedException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		for(int i=0;i&lt;100;i++)&#123;</div><div class="line">			System.out.println(&quot;Main Thread  : &quot; + i);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Runnal extends Thread&#123;</div><div class="line">	@Override</div><div class="line">	public void run() &#123;</div><div class="line">		for(int i=0;i&lt;100;i++)&#123;</div><div class="line">			System.out.println(&quot;i&apos;m : &quot; + i);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="yield-方法"><a href="#yield-方法" class="headerlink" title="yield()方法"></a>yield()方法</h5><p>what：暂停当前正在执行的线程对象，并执行其他线程.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class TestThreadYield &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Runnals t1 = new Runnals(&quot;toby here&quot;);</div><div class="line">		Runnals t2 = new Runnals(&quot;jason &quot;);</div><div class="line">		</div><div class="line">		t1.setPriority(1);</div><div class="line">		t2.setPriority(10);</div><div class="line">		</div><div class="line">		t1.start();</div><div class="line">		t2.start();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Runnals extends Thread&#123;</div><div class="line">	</div><div class="line">	public Runnals(String name) &#123;</div><div class="line">		super(name);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void run() &#123;</div><div class="line">		for(int i=0;i&lt;1000;i++)&#123;</div><div class="line">			System.out.println(this.getName()+&quot;  :&quot;+i);</div><div class="line">			if(i%100==0)&#123;</div><div class="line">				yield();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="setPriority-方法"><a href="#setPriority-方法" class="headerlink" title="setPriority()方法"></a>setPriority()方法</h5><p>what：设置线程的优先级.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Thread.NORM_PRIORITY  //int型，普通优先级 ，值为5</div></pre></td></tr></table></figure>
+<h5 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h5><p>why：当多个线程同时访问一个资源时，有可能造成数据错误.<br>how：用synchronized 关键字为当前使用对象加锁，仅供当前线程执行完成后，其他线程才可以使用.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">public class TestThreadSynchronized implements Runnable&#123;</div><div class="line"></div><div class="line">	Timer timer = new Timer();</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		TestThreadSynchronized t = new TestThreadSynchronized();</div><div class="line">		</div><div class="line">		Thread t1 = new Thread(t);</div><div class="line">		Thread t2 = new Thread(t);</div><div class="line">		</div><div class="line">		t1.setName(&quot;小可爱&quot;);</div><div class="line">		t2.setName(&quot;马铃薯&quot;);</div><div class="line">		</div><div class="line">		t1.start();</div><div class="line">		t2.start();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void run() &#123;</div><div class="line">		timer.add(Thread.currentThread().getName());</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Timer&#123;</div><div class="line">	private static int num = 0;</div><div class="line">	 void add(String name)&#123;</div><div class="line">	 synchronized (this) &#123;</div><div class="line">			 num++;</div><div class="line">				try &#123;</div><div class="line">					Thread.sleep(1);</div><div class="line">				&#125; catch (InterruptedException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">				System.out.println(name + &quot;，是第 &quot; + num + &quot;次使用该方法。&quot;);</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h5><p>what：一个资源拥有多个对象，当多个线程访问该资源时，占用（锁定）了不同的对象，但该线程需要继续锁定剩余其他对象才能够完成操作时，就会造成死锁.<br>how：加粗锁的粒度.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class TestDeadLock implements Runnable&#123;</div><div class="line"></div><div class="line">	int  flag = 0;</div><div class="line">	static Object o1 = new Object(),o2 = new Object();</div><div class="line">	</div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		TestDeadLock t1 = new TestDeadLock();</div><div class="line">		TestDeadLock t2 = new TestDeadLock();</div><div class="line">		t1.flag = 0;</div><div class="line">		t2.flag = 1;</div><div class="line">		Thread th1 = new Thread(t1);</div><div class="line">		Thread th2 = new Thread(t2);</div><div class="line">		th1.start();</div><div class="line">		th2.start();</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void run() &#123;</div><div class="line">		System.out.println(&quot;flag: &quot;+ flag);</div><div class="line">		if(flag == 1)&#123;</div><div class="line">			synchronized (o1) &#123;</div><div class="line">				try &#123;</div><div class="line">					Thread.sleep(500);</div><div class="line">				&#125; catch (InterruptedException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">				synchronized (o2) &#123;</div><div class="line">					System.out.println(&quot;1&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		</div><div class="line">		if(flag == 0)&#123;</div><div class="line">			synchronized (o2) &#123;</div><div class="line">				try &#123;</div><div class="line">					Thread.sleep(500);</div><div class="line">				&#125; catch (InterruptedException e) &#123;</div><div class="line">					e.printStackTrace();</div><div class="line">				&#125;</div><div class="line">				synchronized (o1) &#123;</div><div class="line">					System.out.println(&quot;0&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a><em>面试题</em></h4><h5 id="类中一变量b-100-一同步-synchronized-方法中修改b-1000-睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000"><a href="#类中一变量b-100-一同步-synchronized-方法中修改b-1000-睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000" class="headerlink" title="类中一变量b=100,一同步(synchronized)方法中修改b=1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000."></a>类中一变量b=100,一同步(synchronized)方法中修改b=1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000.</h5><p>A：synchronized锁定只是当前方法，但其他线程可以访问其他非锁定方法.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">public class TestThreadSyn2 implements Runnable&#123;</div><div class="line">	</div><div class="line">	public static void main(String[] args) throws Exception&#123;</div><div class="line">		TestThreadSyn2 t = new TestThreadSyn2();</div><div class="line">		Thread th = new Thread(t);</div><div class="line">		th.start();</div><div class="line">		t.m2();</div><div class="line">		System.out.println(&quot;main b = &quot; + t.b);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	int b =100;</div><div class="line">	public synchronized void m1() throws InterruptedException&#123;</div><div class="line">		b = 1000;</div><div class="line">		Thread.sleep(3000);</div><div class="line">		System.out.println(&quot;m1 b = &quot; + b);</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public  void m2() throws InterruptedException&#123;</div><div class="line">		b = 2000;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	@Override</div><div class="line">	public void run()&#123;</div><div class="line">		try &#123;</div><div class="line">			m1();</div><div class="line">		&#125; catch (InterruptedException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="生产者-消费者"><a href="#生产者-消费者" class="headerlink" title="生产者/消费者"></a>生产者/消费者</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div></pre></td><td class="code"><pre><div class="line">public class ProducerConsumer &#123;</div><div class="line"></div><div class="line">	public static void main(String[] args) &#123;</div><div class="line">		Repository repo = new Repository();</div><div class="line">		Producer pro = new Producer(repo,&quot;蛋糕师&quot;);</div><div class="line">		Consumer con1 = new Consumer(repo,&quot;八戒&quot;);</div><div class="line">		Consumer con2 = new Consumer(repo,&quot;悟空&quot;);</div><div class="line">		Thread p1 = new Thread(pro);</div><div class="line">		Thread c1 = new Thread(con1);</div><div class="line">		Thread c2 = new Thread(con2);</div><div class="line">		</div><div class="line">		p1.start();</div><div class="line">		c1.start();</div><div class="line">		c2.start();</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Cake&#123;</div><div class="line">	int id;</div><div class="line">	Cake(int id)&#123;</div><div class="line">		this.id = id;</div><div class="line">	&#125;</div><div class="line">	public String toString()&#123;</div><div class="line">		return &quot;cake : &quot;+this.id;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Repository&#123;</div><div class="line">	int index = 0;</div><div class="line">	Cake[] cakes = new Cake[5];</div><div class="line">	</div><div class="line">	public synchronized void push(Cake cake)&#123;</div><div class="line">		System.out.println(&quot;进入push()...&quot;);</div><div class="line">		while(index == cakes.length)&#123;</div><div class="line">			try &#123;</div><div class="line">				this.wait();</div><div class="line">				System.out.println(&quot;等待 消费中 ...  当前线程状态：&quot; + Thread.currentThread().isAlive());</div><div class="line">			&#125; catch (InterruptedException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		this.notify();</div><div class="line">		System.out.println(&quot;push() - &gt; notify() 叫醒当前线程...&quot;);</div><div class="line">		cakes[index] = cake;</div><div class="line">		index ++;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public synchronized Cake pop()&#123;</div><div class="line">		System.out.println(&quot;进入pop()...&quot;);</div><div class="line">		while(index == 0)&#123;</div><div class="line">			try &#123;</div><div class="line">				this.wait();</div><div class="line">				System.out.println(&quot;等待 生产 中 ...&quot;);</div><div class="line">			&#125; catch (InterruptedException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		this.notify();</div><div class="line">		System.out.println(&quot;pop() - &gt; notify() 叫醒当前线程...&quot;);</div><div class="line">		index --;</div><div class="line">		System.out.println(&quot;当前index = &quot; + index);</div><div class="line">		return cakes[index];</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Producer implements Runnable&#123;</div><div class="line">	Repository repo = null;</div><div class="line">	String name = null;</div><div class="line">	public Producer(Repository repo,String name) &#123;</div><div class="line">		this.repo = repo;</div><div class="line">		this.name = name;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public void run()&#123;</div><div class="line">		for (int i = 0; i &lt; 20; i++) &#123;</div><div class="line">			System.out.println(name + &quot; 准备生产第  &quot; + i + &quot;个蛋糕 ...&quot;);</div><div class="line">			repo.push(new Cake(i));</div><div class="line">			System.out.println(name+ &quot; 生产了蛋糕 : &quot; + i );</div><div class="line">			try &#123;</div><div class="line">				Thread.sleep(50);</div><div class="line">			&#125; catch (InterruptedException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Consumer implements Runnable&#123;</div><div class="line">	Repository repo = null;</div><div class="line">	String name = null;</div><div class="line">	public Consumer(Repository repo,String name) &#123;</div><div class="line">		this.repo = repo;</div><div class="line">		this.name = name;</div><div class="line">	&#125;</div><div class="line">	</div><div class="line">	public void run()&#123;</div><div class="line">		for (int i = 0; i &lt; 20; i++) &#123;</div><div class="line">			System.out.println(name + &quot; 准备拿走第  &quot; + i + &quot;个蛋糕 ...&quot;);</div><div class="line">			Cake cake = repo.pop();</div><div class="line">			System.out.println(name + &quot; 拿走了蛋糕 : &quot; + cake.toString());</div><div class="line">			try &#123;</div><div class="line">				Thread.sleep(50);</div><div class="line">			&#125; catch (InterruptedException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -1538,14 +1673,14 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/killer.jpg"
-               alt="代号Z" />
-          <p class="site-author-name" itemprop="name">代号Z</p>
+               alt="Z" />
+          <p class="site-author-name" itemprop="name">Z</p>
           <p class="site-description motion-element" itemprop="description">if not you . who ?</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1599,11 +1734,11 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">代号Z</span>
+  <span class="author" itemprop="copyrightHolder">Z</span>
 </div>
 
 <div class="powered-by">
