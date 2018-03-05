@@ -259,8 +259,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/03/05/tech/xxx/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2018/01/02/tech/xxx/" itemprop="url">
+                  关于SimpleDateFormat的yyyy和YYYY的区别
                 </a>
               
             
@@ -273,11 +273,42 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2018-03-05T11:08:27+08:00" content="2018-03-05">
-              2018-03-05
+            <time itemprop="dateCreated" datetime="2018-01-02T18:27:23+08:00" content="2018-01-02">
+              2018-01-02
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术/问题记录/" itemprop="url" rel="index">
+                    <span itemprop="name">问题记录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -303,15 +334,7 @@
       
         
           
-            <hr>
-<hr>
-<p>title: 关于SimpleDateFormat的yyyy和YYYY的区别<br>date: 2018-01-02 18:27:23<br>tags: [“日期”]<br>categories: </p>
-<ul>
-<li>“技术”</li>
-<li>“问题记录”</li>
-</ul>
-<hr>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>​    elephant系统提供服务，token生成使用的是YYYY，其他系统调用该系统提供服务时需要校验token，使用的是yyyy，校验token时失败，之前一直没问题，问题发生在2017年12月31日。</p>
+            <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>​    elephant系统提供服务，token生成使用的是YYYY，其他系统调用该系统提供服务时需要校验token，使用的是yyyy，校验token时失败，之前一直没问题，问题发生在2017年12月31日。</p>
 <h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>​    yyyy 是年，YYYY是 weak year ,表示当前周所属的年份，12月31日是周日，一个礼拜的第一天是周日，所以这一天属于2018年，导致时间不统一，生成的token不一样，调用服务报错</p>
 
           
@@ -1575,7 +1598,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1584,7 +1607,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">32</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
