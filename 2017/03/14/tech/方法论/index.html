@@ -1,38 +1,319 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="写一份自己的简历。把自己所有的相关技能都罗列出来，然后把那些在100年后还用得到的标出来。给每个技能打分，满分为10分。  罗列出你所景仰的程序员。尽量包括那些与你一起工作的人，因为你会在工作中从他们身上获取一些技能。记录下他们身上的1 ~ 2个闪光点，也就是你希望自己有所提高的方面。  查看维基百科上的“计算机科学”栏目，找到“计算机领域先驱者”这个分类，从这个列表中挑选一个人，阅读他的事迹，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="方法论">
+<meta property="og:url" content="http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="写一份自己的简历。把自己所有的相关技能都罗列出来，然后把那些在100年后还用得到的标出来。给每个技能打分，满分为10分。  罗列出你所景仰的程序员。尽量包括那些与你一起工作的人，因为你会在工作中从他们身上获取一些技能。记录下他们身上的1 ~ 2个闪光点，也就是你希望自己有所提高的方面。  查看维基百科上的“计算机科学”栏目，找到“计算机领域先驱者”这个分类，从这个列表中挑选一个人，阅读他的事迹，">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-03-14T08:15:49.000Z">
+<meta property="article:modified_time" content="2017-05-22T15:24:37.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="方法论">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>方法论</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
 
-{% block title %} {{ page.title }} | {{ config.title }} {% endblock %}
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
 
-{% block page_class %}page-post-detail{% endblock %}
+    
+<link rel="stylesheet" href="/css/style.css">
 
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
 
-{% block content %}
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
-
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">Hexo</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
     </div>
   </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
 
-{% endblock %}
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/03/27/tech/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/03/01/tech/Ajax/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&text=方法论"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&is_video=false&description=方法论"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=方法论&body=Check out this article: http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&name=方法论&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        方法论
+    </h1>
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-03-14T08:15:49.000Z" itemprop="datePublished">2017-03-14</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="tag">方法论</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <ol>
+<li><p>写一份自己的简历。把自己所有的相关技能都罗列出来，然后把那些在100年后还用得到的标出来。给每个技能打分，满分为10分。</p>
+</li>
+<li><p>罗列出你所景仰的程序员。尽量包括那些与你一起工作的人，因为你会在工作中从他们身上获取一些技能。记录下他们身上的1 ~ 2个闪光点，也就是你希望自己有所提高的方面。</p>
+</li>
+<li><p>查看维基百科上的“计算机科学”栏目，找到“计算机领域先驱者”这个分类，从这个列表中挑选一个人，阅读他的事迹，并且在阅读时打开任何你感兴趣的链接。</p>
+</li>
+<li><p>花20分钟通读别人的代码。读出色的代码和读糟糕的代码都是有益的，两者都要读，轮流切换。如果你无法感觉出它们之间的区别，可以求助于一位你尊敬的程序员，让他给你展示一下什么是出色的代码、什么是糟糕的代码。把你读过的代码给别人也看看，问问他们的看法。</p>
+</li>
+<li><p>罗列出你最喜欢的10个编程工具——那些你觉得你用得最多、非有不行的工具。随机挑选其中的一个工具，花一个小时去阅读它的文档。在这一个小时里，努力去学习这个工具的某个你不曾意识到的新功能，或者发现某种新的使用方法。</p>
+</li>
+<li><p>想一想，除了编程之外你最擅长什么事情？再想一想，你是通过怎样的锻炼才变得如此熟练和专业的？这对于你的编程工作又有什么启发呢？（怎么把这些经验应用到编程方面？）</p>
+</li>
+<li><p>拿出一叠简历，并和一组面试官在同一个房间里待上一个小时。确保每份简历都至少被3个面试官看过，并且要给出1 ~ 3分的评分。针对那些不同面试官评判大相径庭的简历展开讨论。</p>
+</li>
+<li><p>参与一个电话面试。事后写下你的反馈，抛出你的观点，然后与主持电话面试的人聊一聊，看看你们是否达成了一致的结论。</p>
+</li>
+<li><p>进行一次技术面试，并且被面试的人应该是某个你不太了解的领域里的专家。让他假定听众在该领域里一无所知，因此请他从最基础的讲起。努力去理解他所说的，必要时问一些问题。</p>
+</li>
+<li><p>有机会参与别人的技术面试。期间，你只是认真地听、认真地学。在应聘者努力解决技术问题的同时，你也要在自己脑子里尝试解决这些问题。</p>
+</li>
+<li><p>找到一个能和你交换实际问题的人，每隔一周，相互交流编程问题。花10 ~ 15分钟来尝试解决这些问题，再用10 ~ 15分钟进行讨论（无论能否解决）。</p>
+</li>
+<li><p>当你听到任何你一时之间也无法解决的面试问题时，赶紧回到你的座位上，把这个问题用电子邮件发给自己，以留作日后的提醒。在那一周里找出点时间，用自己最喜欢的编程语言来解决它。</p>
+<hr>
+</li>
+</ol>
+<p>	</p>
+<p>1． 与别的程序员交流。读别人的代码。这比任何书籍或培训课程都更重要。</p>
+<p>2． 动手写程序！最好的学习方法就是边做边学。</p>
+<p>3． 在本科或研究生的课程中学习编程课程。</p>
+<p>4． 找一些项目来做，并且需要与其他程序员形成团队来合作。在项目的进行过程中，学会辨别最出色的程序员以及最糟糕的程序员。</p>
+<p>5． 在项目中跟随别的程序员一起工作，了解如何维护那些不是你写的代码，并且学习如何写出利于他人维护的代码。</p>
+<p>6． 学习多种不同的编程语言，特别是那些与你现在所熟悉的语言有着不同的世界观和编程模型的。</p>
+<p>7． 了解硬件对软件的影响。知道你的电脑执行一条指令需要多少时间，从内存中取出一个字（在有缓存或没缓存的情况下）需要多少时间，在以太网（或者因特网）上传输数据需要多少时间，从磁盘中读取连续的数据或者在磁盘上跳转到另一个位置需要多少时间，等等。</p>
+<hr>
+<ol>
+<li><p>写博客。我在2004年初创办了CodingHorror.com博客，作为我自己努力学习的一种形式。它在一开始很不起眼，到后来成为我职业生涯中做过的最重要的一件事。所以，你也应该写博客。最后“闻达于天下”的人，往往就是那些能够有效书写和沟通的人。他们的声音最响亮，是他们在制定游戏规则，并且引领世界的潮流。</p>
+</li>
+<li><p>积极参与著名的开源项目。所有的高谈阔论听起来都很好，但是，你是一个大话王还是一名实干家呢？别光说不练，这个非常重要，因为人们会用你的行动来衡量你，而不是你的言论。努力在公众面前留下些实实在在有用的东西吧，到时候你就可以说，“我在那个项目中出过力。”</p>
+</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&text=方法论"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&is_video=false&description=方法论"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=方法论&body=Check out this article: http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&title=方法论"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2017/03/14/tech/%E6%96%B9%E6%B3%95%E8%AE%BA/&name=方法论&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2023 John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>

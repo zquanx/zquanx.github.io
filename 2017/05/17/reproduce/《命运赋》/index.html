@@ -1,38 +1,305 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="天有不测风云，人有旦夕祸福。 蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。 马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。 盖闻：人生在世，富贵不能**，贫贱不能移。 文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。 颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。 尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。 张良原是布衣，萧何称谓县吏。 晏子身无五尺，封作齐国宰相； 孔明卧居草庐，能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《命运赋》">
+<meta property="og:url" content="http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="天有不测风云，人有旦夕祸福。 蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。 马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。 盖闻：人生在世，富贵不能**，贫贱不能移。 文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。 颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。 尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。 张良原是布衣，萧何称谓县吏。 晏子身无五尺，封作齐国宰相； 孔明卧居草庐，能">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-05-17T14:36:56.000Z">
+<meta property="article:modified_time" content="2017-05-17T14:40:34.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="吕蒙正">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>《命运赋》</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
+    
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
 
-{% block title %} {{ page.title }} | {{ config.title }} {% endblock %}
+    
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
 
-{% block page_class %}page-post-detail{% endblock %}
+    
+<link rel="stylesheet" href="/css/style.css">
 
+    <!-- rss -->
+    
+    
+    <!-- jquery -->
+    
+<script src="/lib/jquery/jquery.min.js"></script>
 
-{% block content %}
+<meta name="generator" content="Hexo 6.3.0"></head>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
-
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+<body>
+    <div class="banner">
+<div id="blogtitel" class="blogtitel">Hexo</div>
+<ul id="wrapper" class="wrapper">
+  <div class="sun">
+    <div class="star"></div>
+  </div>
+  <div class="mercury">
+    <div class="planet">
+      <div class="shadow"></div>
     </div>
   </div>
+  <div class="venus">
+    <div class="planet">
+      <div class="shadow"></div>
+    </div>
+  </div>
+  <div class="earth">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="mars">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+  <div class="jupiter">
+    <div class="planet"><div class="shadow"></div></div>
+  </div>
+</ul>
+</div>
 
-{% endblock %}
+    <div class="background">
+      
+        <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2017/05/22/tech/About-Git/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
+        
+        
+        <li><a class="icon" href="/2017/05/10/tech/Markdown%E7%AC%94%E8%AE%B0/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&text=《命运赋》"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&is_video=false&description=《命运赋》"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=《命运赋》&body=Check out this article: http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&name=《命运赋》&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+      
+      <div class="content index width mx-auto px2 my4">
+          
+          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        《命运赋》
+    </h1>
 
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Hexo</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2017-05-17T14:36:56.000Z" itemprop="datePublished">2017-05-17</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/%E5%90%95%E8%92%99%E6%AD%A3/" rel="tag">吕蒙正</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>天有不测风云，人有旦夕祸福。</p>
+<p>蜈蚣百足，行不及蛇；雄鸡两翼，飞不过鸦。</p>
+<p>马有千里之程，无骑不能自往；人有冲天之志，非运不能自通。</p>
+<p>盖闻：人生在世，富贵不能**，贫贱不能移。</p>
+<p>文章盖世，孔子厄于陈邦；武略超群，太公钓于渭水。</p>
+<p>颜渊命短，殊非凶恶之徒；盗跖年长，岂是善良之辈。</p>
+<p>尧帝明圣，却生不肖之儿；瞽叟愚顽，反生大孝之子。</p>
+<p>张良原是布衣，萧何称谓县吏。</p>
+<p>晏子身无五尺，封作齐国宰相；</p>
+<p>孔明卧居草庐，能作蜀汉军师。</p>
+<p>楚霸虽雄，败于乌江自刎；汉王虽弱，竟有万里江山。</p>
+<p>李广有射虎之威，到老无封；冯唐有乘龙之才，一生不遇。</p>
+<p>韩信未遇之时，无一日三餐；及至遇行，腰悬三尺玉印；一旦时衰，死于阴人之手。</p>
+<p>有先贫而后富，有老壮而少衰。</p>
+<p>满腹文章，白发竟然不中；才疏学浅，少年及第登科。</p>
+<p>深院宫娥，运退反为妓妾；风流妓女，时来配作夫人。</p>
+<p>青春美女，却招愚蠢之夫；俊秀郎君，反配粗丑之妇。</p>
+<p>蛟龙未遇，潜水于鱼鳖之间；君子失时，拱手于小人之下。</p>
+<p>衣服虽破，常存仪礼之容；面带忧愁，每抱怀安之量。</p>
+<p>时遭不遇，只宜安贫守份；心若不欺，必然扬眉吐气。</p>
+<p>初贫君子，天然骨骼生成；乍富小人，不脱贫寒肌体。</p>
+<p>天不得时，日月无光；地不得时，草木不生；</p>
+<p>水不得时，风浪不平；人不得时，利运不通。</p>
+<p>注福注禄，命里已安排定，富贵谁不欲？</p>
+<p>人若不依根基八字，岂能为卿为相？</p>
+<p>吾昔寓居洛阳，朝求僧餐，暮宿破窖。思衣不可遮其体，思食不可济其饥。上人憎，下人厌，人道我贱，非我不弃也。</p>
+<p>今居朝堂，官至极品，位置三公，身虽鞠躬于一人之下，而列职于千万人之上。有挞百僚之杖，有斩鄙吝之剑。思衣而有罗锦千箱，思食而有珍馐百味。出则壮士执鞭，入则佳人捧觞。上人宠，下人拥。人道我贵，非我之能也，此乃时也、运也、命也。</p>
+<p>嗟呼！人生在世，富贵不可尽用，贫贱不可自欺。听由天地循环，周而复始焉。</p>
+
+  </div>
+</article>
+
+
+
+      </div>
+      
+       <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&text=《命运赋》"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&is_video=false&description=《命运赋》"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=《命运赋》&body=Check out this article: http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&title=《命运赋》"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2017/05/17/reproduce/%E3%80%8A%E5%91%BD%E8%BF%90%E8%B5%8B%E3%80%8B/&name=《命运赋》&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+      
+      <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2023 John Doe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/home/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/tzvetkov75">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+      
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
+    </div>
+</body>
+</html>
