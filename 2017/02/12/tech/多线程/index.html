@@ -1,11 +1,24 @@
 <!DOCTYPE html>
-<html lang=zh>
+<html lang="zh-CN">
 <head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"zquanx.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
     <meta name="description" content="what线程 ： 是一个程序内部的顺序控制流 进程 ： 严格意义上讲是一个静态任务 多线程 ： 在同一应用程序中有多个顺序流同时执行 多进程 ： 在操作系统中能同时运行多个任务（程序） ps：在同一个时间点上，一个CPU只执行一个线程，所谓多线程同时运行，只不过是CPU执行速度较快，多线程的每个程序每个执行一会儿，而产生的错觉给人们以为是多线程同时执行,真正多线程是有双CPU或双核或更多. 多线程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程">
@@ -18,172 +31,195 @@
 <meta property="article:author" content="Blue">
 <meta property="article:tag" content="线程">
 <meta name="twitter:card" content="summary">
-<meta property="fb:app_id" content="11">
-    
-    
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-          
-        
-    
-    <!-- title -->
-    <title>线程</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
-    
-<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
 
-    
-<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    <!-- rss -->
-    
-    
-    <!-- jquery -->
-    
-<script src="/lib/jquery/jquery.min.js"></script>
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-    <div class="banner">
-<div id="blogtitel" class="blogtitel">这里是网站标题</div>
-<ul id="wrapper" class="wrapper">
-  <div class="sun">
-    <div class="star"></div>
-  </div>
-  <div class="mercury">
-    <div class="planet">
-      <div class="shadow"></div>
-    </div>
-  </div>
-  <div class="venus">
-    <div class="planet">
-      <div class="shadow"></div>
-    </div>
-  </div>
-  <div class="earth">
-    <div class="planet"><div class="shadow"></div></div>
-  </div>
-  <div class="mars">
-    <div class="planet"><div class="shadow"></div></div>
-  </div>
-  <div class="jupiter">
-    <div class="planet"><div class="shadow"></div></div>
-  </div>
-</ul>
-</div>
-
-    <div class="background">
-      
-        <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/home/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" href="/2017/03/01/tech/Ajax/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover='$("#i-prev").toggle();' onmouseout='$("#i-prev").toggle();'></i></a></li>
-        
-        
-        <li><a class="icon" href="/2017/02/06/tech/IO%E6%B5%81/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover='$("#i-next").toggle();' onmouseout='$("#i-next").toggle();'></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover='$("#i-top").toggle();' onmouseout='$("#i-top").toggle();'></i></a></li>
-        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover='$("#i-share").toggle();' onmouseout='$("#i-share").toggle();' onclick='$("#share").toggle();return false;'></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&text=线程"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&is_video=false&description=线程"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=线程&body=Check out this article: https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&name=线程&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#what"><span class="toc-number">1.</span> <span class="toc-text">what</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84java%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">多线程的java实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8A%9E%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">结束线程的办法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E2%91%A0sleep-%E6%97%B6%E4%BC%9A%E6%8A%9B%E5%87%BAInterruptException%E5%BC%82%E5%B8%B8%EF%BC%8C%E5%BD%93%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8interrupt-%E6%96%B9%E6%B3%95%E6%97%B6%EF%BC%8C%E7%BA%BF%E7%A8%8B%E6%8A%9B%E5%BC%82%E5%B8%B8%EF%BC%8Ccatch%E9%87%8C%E9%9D%A2%E5%86%99%E2%80%9Dreturn-%E2%80%9D%EF%BC%8C-%E7%BB%93%E6%9D%9F%E8%AF%A5%E7%BA%BF%E7%A8%8B"><span class="toc-number">3.1.1.</span> <span class="toc-text">①sleep()时会抛出InterruptException异常，当线程调用interrupt()方法时，线程抛异常，catch里面写”return;”， 结束该线程.</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E2%91%A1%E7%94%A8%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%EF%BC%8C%E4%BE%8B%E5%A6%82%E2%80%9Dwhile-flag-%E2%80%9D%EF%BC%8C-%E5%BD%93flag%E4%B8%BAfalse%E6%97%B6%E7%BB%93%E6%9D%9F%E7%BA%BF%E7%A8%8B"><span class="toc-number">3.1.2.</span> <span class="toc-text">②用逻辑控制，例如”while(flag)”， 当flag为false时结束线程.</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#join-%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">join()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#yield-%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">yield()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#setPriority-%E6%96%B9%E6%B3%95"><span class="toc-number">3.4.</span> <span class="toc-text">setPriority()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="toc-number">3.5.</span> <span class="toc-text">线程同步</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-number">3.6.</span> <span class="toc-text">死锁</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E4%B8%AD%E4%B8%80%E5%8F%98%E9%87%8Fb-100-%E4%B8%80%E5%90%8C%E6%AD%A5-synchronized-%E6%96%B9%E6%B3%95%E4%B8%AD%E4%BF%AE%E6%94%B9b-1000-%E7%9D%A1%E7%9C%A05%E7%A7%92%EF%BC%8C%E5%8F%A6%E4%B8%80%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E6%89%93%E5%8D%B0b%E7%9A%84%E5%80%BC%EF%BC%8Cmain%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%A5%E7%9D%80%E6%89%A7%E8%A1%8C%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AE%EF%BC%9Ab%E6%89%93%E5%8D%B0%E5%A4%9A%E5%B0%91%EF%BC%9F%E7%BB%93%E6%9E%9C1000"><span class="toc-number">4.1.</span> <span class="toc-text">类中一变量b&#x3D;100,一同步(synchronized)方法中修改b&#x3D;1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85"><span class="toc-number">4.2.</span> <span class="toc-text">生产者&#x2F;消费者</span></a></li></ol></li></ol>
-    </div>
-  </span>
-</div>
-
-      
-      <div class="content index width mx-auto px2 my4">
-          
-          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        线程
-    </h1>
+<link rel="canonical" href="https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">这里是网站标题</span>
-      </span>
-      
-    <div class="postdate">
-        <time datetime="2017-02-12T00:23:35.000Z" itemprop="datePublished">2017-02-12</time>
-    </div>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/","path":"2017/02/12/tech/多线程/","title":"线程"}</script>
 
-
-      
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a>
-    </div>
-
-
-    </div>
-  </header>
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>线程 | 这里是网站标题</title>
   
 
-  <div class="content" itemprop="articleBody">
-    <h4 id="what"><a href="#what" class="headerlink" title="what"></a><em>what</em></h4><p>线程 ： 是一个程序内部的顺序控制流</p>
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">这里是网站标题</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Hi，here is subtitle</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#what"><span class="nav-number">1.</span> <span class="nav-text">what</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84java%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">多线程的java实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BB%93%E6%9D%9F%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8A%9E%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">结束线程的办法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E2%91%A0sleep-%E6%97%B6%E4%BC%9A%E6%8A%9B%E5%87%BAInterruptException%E5%BC%82%E5%B8%B8%EF%BC%8C%E5%BD%93%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8interrupt-%E6%96%B9%E6%B3%95%E6%97%B6%EF%BC%8C%E7%BA%BF%E7%A8%8B%E6%8A%9B%E5%BC%82%E5%B8%B8%EF%BC%8Ccatch%E9%87%8C%E9%9D%A2%E5%86%99%E2%80%9Dreturn-%E2%80%9D%EF%BC%8C-%E7%BB%93%E6%9D%9F%E8%AF%A5%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">①sleep()时会抛出InterruptException异常，当线程调用interrupt()方法时，线程抛异常，catch里面写”return;”， 结束该线程.</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E2%91%A1%E7%94%A8%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%EF%BC%8C%E4%BE%8B%E5%A6%82%E2%80%9Dwhile-flag-%E2%80%9D%EF%BC%8C-%E5%BD%93flag%E4%B8%BAfalse%E6%97%B6%E7%BB%93%E6%9D%9F%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.1.2.</span> <span class="nav-text">②用逻辑控制，例如”while(flag)”， 当flag为false时结束线程.</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#join-%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">join()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#yield-%E6%96%B9%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">yield()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#setPriority-%E6%96%B9%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">setPriority()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="nav-number">3.5.</span> <span class="nav-text">线程同步</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">3.6.</span> <span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BB%E4%B8%AD%E4%B8%80%E5%8F%98%E9%87%8Fb-100-%E4%B8%80%E5%90%8C%E6%AD%A5-synchronized-%E6%96%B9%E6%B3%95%E4%B8%AD%E4%BF%AE%E6%94%B9b-1000-%E7%9D%A1%E7%9C%A05%E7%A7%92%EF%BC%8C%E5%8F%A6%E4%B8%80%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E6%89%93%E5%8D%B0b%E7%9A%84%E5%80%BC%EF%BC%8Cmain%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%A5%E7%9D%80%E6%89%A7%E8%A1%8C%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AE%EF%BC%9Ab%E6%89%93%E5%8D%B0%E5%A4%9A%E5%B0%91%EF%BC%9F%E7%BB%93%E6%9E%9C1000"><span class="nav-number">4.1.</span> <span class="nav-text">类中一变量b&#x3D;100,一同步(synchronized)方法中修改b&#x3D;1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85"><span class="nav-number">4.2.</span> <span class="nav-text">生产者&#x2F;消费者</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Blue</p>
+  <div class="site-description" itemprop="description">here is description</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Blue">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="这里是网站标题">
+      <meta itemprop="description" content="here is description">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="线程 | 这里是网站标题">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          线程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2017-02-12 08:23:35" itemprop="dateCreated datePublished" datetime="2017-02-12T08:23:35+08:00">2017-02-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2017-05-22 23:24:42" itemprop="dateModified" datetime="2017-05-22T23:24:42+08:00">2017-05-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h4 id="what"><a href="#what" class="headerlink" title="what"></a><em>what</em></h4><p>线程 ： 是一个程序内部的顺序控制流</p>
 <p>进程 ： 严格意义上讲是一个静态任务</p>
 <p>多线程 ： 在同一应用程序中有多个顺序流同时执行</p>
 <p>多进程 ： 在操作系统中能同时运行多个任务（程序）</p>
@@ -210,95 +246,87 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">public class TestThreadSyn2 implements Runnable&#123;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) throws Exception&#123;</span><br><span class="line">		TestThreadSyn2 t = new TestThreadSyn2();</span><br><span class="line">		Thread th = new Thread(t);</span><br><span class="line">		th.start();</span><br><span class="line">		t.m2();</span><br><span class="line">		System.out.println(&quot;main b = &quot; + t.b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	int b =100;</span><br><span class="line">	public synchronized void m1() throws InterruptedException&#123;</span><br><span class="line">		b = 1000;</span><br><span class="line">		Thread.sleep(3000);</span><br><span class="line">		System.out.println(&quot;m1 b = &quot; + b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public  void m2() throws InterruptedException&#123;</span><br><span class="line">		b = 2000;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			m1();</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="生产者-消费者"><a href="#生产者-消费者" class="headerlink" title="生产者&#x2F;消费者"></a>生产者&#x2F;消费者</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">public class ProducerConsumer &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Repository repo = new Repository();</span><br><span class="line">		Producer pro = new Producer(repo,&quot;蛋糕师&quot;);</span><br><span class="line">		Consumer con1 = new Consumer(repo,&quot;八戒&quot;);</span><br><span class="line">		Consumer con2 = new Consumer(repo,&quot;悟空&quot;);</span><br><span class="line">		Thread p1 = new Thread(pro);</span><br><span class="line">		Thread c1 = new Thread(con1);</span><br><span class="line">		Thread c2 = new Thread(con2);</span><br><span class="line">		</span><br><span class="line">		p1.start();</span><br><span class="line">		c1.start();</span><br><span class="line">		c2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Cake&#123;</span><br><span class="line">	int id;</span><br><span class="line">	Cake(int id)&#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String toString()&#123;</span><br><span class="line">		return &quot;cake : &quot;+this.id;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Repository&#123;</span><br><span class="line">	int index = 0;</span><br><span class="line">	Cake[] cakes = new Cake[5];</span><br><span class="line">	</span><br><span class="line">	public synchronized void push(Cake cake)&#123;</span><br><span class="line">		System.out.println(&quot;进入push()...&quot;);</span><br><span class="line">		while(index == cakes.length)&#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				this.wait();</span><br><span class="line">				System.out.println(&quot;等待 消费中 ...  当前线程状态：&quot; + Thread.currentThread().isAlive());</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		this.notify();</span><br><span class="line">		System.out.println(&quot;push() - &gt; notify() 叫醒当前线程...&quot;);</span><br><span class="line">		cakes[index] = cake;</span><br><span class="line">		index ++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public synchronized Cake pop()&#123;</span><br><span class="line">		System.out.println(&quot;进入pop()...&quot;);</span><br><span class="line">		while(index == 0)&#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				this.wait();</span><br><span class="line">				System.out.println(&quot;等待 生产 中 ...&quot;);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		this.notify();</span><br><span class="line">		System.out.println(&quot;pop() - &gt; notify() 叫醒当前线程...&quot;);</span><br><span class="line">		index --;</span><br><span class="line">		System.out.println(&quot;当前index = &quot; + index);</span><br><span class="line">		return cakes[index];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Producer implements Runnable&#123;</span><br><span class="line">	Repository repo = null;</span><br><span class="line">	String name = null;</span><br><span class="line">	public Producer(Repository repo,String name) &#123;</span><br><span class="line">		this.repo = repo;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for (int i = 0; i &lt; 20; i++) &#123;</span><br><span class="line">			System.out.println(name + &quot; 准备生产第  &quot; + i + &quot;个蛋糕 ...&quot;);</span><br><span class="line">			repo.push(new Cake(i));</span><br><span class="line">			System.out.println(name+ &quot; 生产了蛋糕 : &quot; + i );</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(50);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Consumer implements Runnable&#123;</span><br><span class="line">	Repository repo = null;</span><br><span class="line">	String name = null;</span><br><span class="line">	public Consumer(Repository repo,String name) &#123;</span><br><span class="line">		this.repo = repo;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for (int i = 0; i &lt; 20; i++) &#123;</span><br><span class="line">			System.out.println(name + &quot; 准备拿走第  &quot; + i + &quot;个蛋糕 ...&quot;);</span><br><span class="line">			Cake cake = repo.pop();</span><br><span class="line">			System.out.println(name + &quot; 拿走了蛋糕 : &quot; + cake.toString());</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(50);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  </div>
-</article>
+    </div>
 
+    
+    
+    
 
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag"># 线程</a>
+          </div>
 
-      </div>
-      
-       <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/home/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
         
-      </ul>
-    </div>
 
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#what"><span class="toc-number">1.</span> <span class="toc-text">what</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84java%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.</span> <span class="toc-text">多线程的java实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8A%9E%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">结束线程的办法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E2%91%A0sleep-%E6%97%B6%E4%BC%9A%E6%8A%9B%E5%87%BAInterruptException%E5%BC%82%E5%B8%B8%EF%BC%8C%E5%BD%93%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8interrupt-%E6%96%B9%E6%B3%95%E6%97%B6%EF%BC%8C%E7%BA%BF%E7%A8%8B%E6%8A%9B%E5%BC%82%E5%B8%B8%EF%BC%8Ccatch%E9%87%8C%E9%9D%A2%E5%86%99%E2%80%9Dreturn-%E2%80%9D%EF%BC%8C-%E7%BB%93%E6%9D%9F%E8%AF%A5%E7%BA%BF%E7%A8%8B"><span class="toc-number">3.1.1.</span> <span class="toc-text">①sleep()时会抛出InterruptException异常，当线程调用interrupt()方法时，线程抛异常，catch里面写”return;”， 结束该线程.</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E2%91%A1%E7%94%A8%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%EF%BC%8C%E4%BE%8B%E5%A6%82%E2%80%9Dwhile-flag-%E2%80%9D%EF%BC%8C-%E5%BD%93flag%E4%B8%BAfalse%E6%97%B6%E7%BB%93%E6%9D%9F%E7%BA%BF%E7%A8%8B"><span class="toc-number">3.1.2.</span> <span class="toc-text">②用逻辑控制，例如”while(flag)”， 当flag为false时结束线程.</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#join-%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">join()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#yield-%E6%96%B9%E6%B3%95"><span class="toc-number">3.3.</span> <span class="toc-text">yield()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#setPriority-%E6%96%B9%E6%B3%95"><span class="toc-number">3.4.</span> <span class="toc-text">setPriority()方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5"><span class="toc-number">3.5.</span> <span class="toc-text">线程同步</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-number">3.6.</span> <span class="toc-text">死锁</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="toc-number">4.</span> <span class="toc-text">面试题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B1%BB%E4%B8%AD%E4%B8%80%E5%8F%98%E9%87%8Fb-100-%E4%B8%80%E5%90%8C%E6%AD%A5-synchronized-%E6%96%B9%E6%B3%95%E4%B8%AD%E4%BF%AE%E6%94%B9b-1000-%E7%9D%A1%E7%9C%A05%E7%A7%92%EF%BC%8C%E5%8F%A6%E4%B8%80%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%E6%89%93%E5%8D%B0b%E7%9A%84%E5%80%BC%EF%BC%8Cmain%E6%96%B9%E6%B3%95%E6%89%A7%E8%A1%8C%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95%EF%BC%8C%E6%8E%A5%E7%9D%80%E6%89%A7%E8%A1%8C%E6%99%AE%E9%80%9A%E6%96%B9%E6%B3%95%EF%BC%8C%E9%97%AE%EF%BC%9Ab%E6%89%93%E5%8D%B0%E5%A4%9A%E5%B0%91%EF%BC%9F%E7%BB%93%E6%9E%9C1000"><span class="toc-number">4.1.</span> <span class="toc-text">类中一变量b&#x3D;100,一同步(synchronized)方法中修改b&#x3D;1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000.</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%94%9F%E4%BA%A7%E8%80%85-%E6%B6%88%E8%B4%B9%E8%80%85"><span class="toc-number">4.2.</span> <span class="toc-text">生产者&#x2F;消费者</span></a></li></ol></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&text=线程"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&is_video=false&description=线程"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=线程&body=Check out this article: https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&title=线程"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://zquanx.github.io/2017/02/12/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/&name=线程&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      <ul>
-        <li id="toc"><a class="icon" href="#" onclick='$("#toc-footer").toggle();return false;'><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
-        <li id="share"><a class="icon" href="#" onclick='$("#share-footer").toggle();return false;'><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
-        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
-        <li id="menu"><a class="icon" href="#" onclick='$("#nav-footer").toggle();return false;'><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
-      </ul>
-    </div>
-
-  </div>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2017/02/06/tech/IO%E6%B5%81/" rel="prev" title="I/O流">
+                  <i class="fa fa-angle-left"></i> I/O流
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2017/03/01/tech/Ajax/" rel="next" title="Ajax">
+                  Ajax <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
 </div>
 
-      
-      <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2023 Blue
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Blue</span>
   </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/home/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-        
-      </ul>
-    </nav>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
-</footer>
-
-      
-<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-<!-- Google Analytics -->
-
-<!-- Disqus Comments -->
-
 
     </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
 </body>
 </html>
