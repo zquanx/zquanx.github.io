@@ -42,15 +42,6 @@
 
   <title>Blue's Blog</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZWTMENC3Y2"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-ZWTMENC3Y2');
-      }
-    </script>
 
 
 
@@ -169,6 +160,85 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/2017/05/09/tech/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blue's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/05/09/tech/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">工厂模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-05-09 23:26:15" itemprop="dateCreated datePublished" datetime="2017-05-09T23:26:15+08:00">2017-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-19 00:06:12" itemprop="dateModified" datetime="2023-10-19T00:06:12+08:00">2023-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>参考文章：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/zhangchenliang/p/3700820.html">http://www.cnblogs.com/zhangchenliang/p/3700820.html</a></p>
+<h3 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h3><p>工厂类：核心业务逻辑在这里处理<br>抽象产品类：一个接口或抽象类<br>具体产品类：实现接口或继承抽象类，工厂生成的对象就是该角色的实例</p>
+<h3 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h3><p>抽象工厂类：核心<br>具体工厂类：具体业务逻辑在这里<br>抽象产品类：定义抽象类<br>具体产品角色：实现或重写接口或抽象类中的方法</p>
+<h3 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h3><p>抽象工厂角色：定义接口，返回产品，有多个种类的产品，就分别返回不同种类的产品<br>具体工厂角色：不同种类的产品分别对应不同的具体工厂，每个具体工厂都继承或实现抽象工厂，每一个具体工厂都代表着一个产品族（例如奔驰SUV和宝马SUV为同一产品族）<br>抽象产品角色：定义抽象类（产品树）<br>具体产品角色：实现或重写接口或抽象类中的方法</p>
+<hr>
+<p>抽象工厂模式一般用于具有产品树和产品族的场景下<br>抽象工厂模式的缺点：如果需要增加新的产品树，那么就要新增三个产品类，并且要修改三个工厂类。这样大批量的改动是很丑陋的做法，所以可以用简单工厂配合反射来改进抽象工厂</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://github.com/2017/05/09/tech/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -249,85 +319,6 @@
 <h4 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a><em>面试题</em></h4><h5 id="类中一变量b-100-一同步-synchronized-方法中修改b-1000-睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000"><a href="#类中一变量b-100-一同步-synchronized-方法中修改b-1000-睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000" class="headerlink" title="类中一变量b&#x3D;100,一同步(synchronized)方法中修改b&#x3D;1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000."></a>类中一变量b&#x3D;100,一同步(synchronized)方法中修改b&#x3D;1000,睡眠5秒，另一普通方法打印b的值，main方法执行同步方法，接着执行普通方法，问：b打印多少？结果1000.</h5><p>A：synchronized锁定只是当前方法，但其他线程可以访问其他非锁定方法.</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class TestThreadSyn2 implements Runnable&#123;</span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) throws Exception&#123;</span><br><span class="line">		TestThreadSyn2 t = new TestThreadSyn2();</span><br><span class="line">		Thread th = new Thread(t);</span><br><span class="line">		th.start();</span><br><span class="line">		t.m2();</span><br><span class="line">		System.out.println(&quot;main b = &quot; + t.b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	int b =100;</span><br><span class="line">	public synchronized void m1() throws InterruptedException&#123;</span><br><span class="line">		b = 1000;</span><br><span class="line">		Thread.sleep(3000);</span><br><span class="line">		System.out.println(&quot;m1 b = &quot; + b);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public  void m2() throws InterruptedException&#123;</span><br><span class="line">		b = 2000;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	@Override</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		try &#123;</span><br><span class="line">			m1();</span><br><span class="line">		&#125; catch (InterruptedException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="生产者-消费者"><a href="#生产者-消费者" class="headerlink" title="生产者&#x2F;消费者"></a>生产者&#x2F;消费者</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">public class ProducerConsumer &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		Repository repo = new Repository();</span><br><span class="line">		Producer pro = new Producer(repo,&quot;蛋糕师&quot;);</span><br><span class="line">		Consumer con1 = new Consumer(repo,&quot;八戒&quot;);</span><br><span class="line">		Consumer con2 = new Consumer(repo,&quot;悟空&quot;);</span><br><span class="line">		Thread p1 = new Thread(pro);</span><br><span class="line">		Thread c1 = new Thread(con1);</span><br><span class="line">		Thread c2 = new Thread(con2);</span><br><span class="line">		</span><br><span class="line">		p1.start();</span><br><span class="line">		c1.start();</span><br><span class="line">		c2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Cake&#123;</span><br><span class="line">	int id;</span><br><span class="line">	Cake(int id)&#123;</span><br><span class="line">		this.id = id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String toString()&#123;</span><br><span class="line">		return &quot;cake : &quot;+this.id;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Repository&#123;</span><br><span class="line">	int index = 0;</span><br><span class="line">	Cake[] cakes = new Cake[5];</span><br><span class="line">	</span><br><span class="line">	public synchronized void push(Cake cake)&#123;</span><br><span class="line">		System.out.println(&quot;进入push()...&quot;);</span><br><span class="line">		while(index == cakes.length)&#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				this.wait();</span><br><span class="line">				System.out.println(&quot;等待 消费中 ...  当前线程状态：&quot; + Thread.currentThread().isAlive());</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		this.notify();</span><br><span class="line">		System.out.println(&quot;push() - &gt; notify() 叫醒当前线程...&quot;);</span><br><span class="line">		cakes[index] = cake;</span><br><span class="line">		index ++;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public synchronized Cake pop()&#123;</span><br><span class="line">		System.out.println(&quot;进入pop()...&quot;);</span><br><span class="line">		while(index == 0)&#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				this.wait();</span><br><span class="line">				System.out.println(&quot;等待 生产 中 ...&quot;);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		this.notify();</span><br><span class="line">		System.out.println(&quot;pop() - &gt; notify() 叫醒当前线程...&quot;);</span><br><span class="line">		index --;</span><br><span class="line">		System.out.println(&quot;当前index = &quot; + index);</span><br><span class="line">		return cakes[index];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Producer implements Runnable&#123;</span><br><span class="line">	Repository repo = null;</span><br><span class="line">	String name = null;</span><br><span class="line">	public Producer(Repository repo,String name) &#123;</span><br><span class="line">		this.repo = repo;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for (int i = 0; i &lt; 20; i++) &#123;</span><br><span class="line">			System.out.println(name + &quot; 准备生产第  &quot; + i + &quot;个蛋糕 ...&quot;);</span><br><span class="line">			repo.push(new Cake(i));</span><br><span class="line">			System.out.println(name+ &quot; 生产了蛋糕 : &quot; + i );</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(50);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Consumer implements Runnable&#123;</span><br><span class="line">	Repository repo = null;</span><br><span class="line">	String name = null;</span><br><span class="line">	public Consumer(Repository repo,String name) &#123;</span><br><span class="line">		this.repo = repo;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		for (int i = 0; i &lt; 20; i++) &#123;</span><br><span class="line">			System.out.println(name + &quot; 准备拿走第  &quot; + i + &quot;个蛋糕 ...&quot;);</span><br><span class="line">			Cake cake = repo.pop();</span><br><span class="line">			System.out.println(name + &quot; 拿走了蛋糕 : &quot; + cake.toString());</span><br><span class="line">			try &#123;</span><br><span class="line">				Thread.sleep(50);</span><br><span class="line">			&#125; catch (InterruptedException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://github.com/2017/05/09/tech/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blue's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2017/05/09/tech/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" class="post-title-link" itemprop="url">工厂模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2017-05-09 23:26:15" itemprop="dateCreated datePublished" datetime="2017-05-09T23:26:15+08:00">2017-05-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-19 00:06:12" itemprop="dateModified" datetime="2023-10-19T00:06:12+08:00">2023-10-19</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>参考文章：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/zhangchenliang/p/3700820.html">http://www.cnblogs.com/zhangchenliang/p/3700820.html</a></p>
-<h3 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h3><p>工厂类：核心业务逻辑在这里处理<br>抽象产品类：一个接口或抽象类<br>具体产品类：实现接口或继承抽象类，工厂生成的对象就是该角色的实例</p>
-<h3 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h3><p>抽象工厂类：核心<br>具体工厂类：具体业务逻辑在这里<br>抽象产品类：定义抽象类<br>具体产品角色：实现或重写接口或抽象类中的方法</p>
-<h3 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h3><p>抽象工厂角色：定义接口，返回产品，有多个种类的产品，就分别返回不同种类的产品<br>具体工厂角色：不同种类的产品分别对应不同的具体工厂，每个具体工厂都继承或实现抽象工厂，每一个具体工厂都代表着一个产品族（例如奔驰SUV和宝马SUV为同一产品族）<br>抽象产品角色：定义抽象类（产品树）<br>具体产品角色：实现或重写接口或抽象类中的方法</p>
-<hr>
-<p>抽象工厂模式一般用于具有产品树和产品族的场景下<br>抽象工厂模式的缺点：如果需要增加新的产品树，那么就要新增三个产品类，并且要修改三个工厂类。这样大批量的改动是很丑陋的做法，所以可以用简单工厂配合反射来改进抽象工厂</p>
 
       
     </div>
