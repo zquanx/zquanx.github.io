@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
+        <loc>http://blue-blog.tech/2023/10/29/tech/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
+        
+        <lastmod>2023-10-29</lastmod>
+        
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
         <loc>http://blue-blog.tech/2016/10/13/log/%E3%80%8A%E6%9D%80%E7%94%9F%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/</loc>
         
         <lastmod>2023-10-29</lastmod>
@@ -146,6 +155,20 @@
         <priority>0.2</priority>
     </url>
     
+    <url>
+        <loc>http://blue-blog.tech/tags/npm/</loc>
+        <lastmod>2023-10-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>http://blue-blog.tech/tags/%E5%91%BD%E4%BB%A4/</loc>
+        <lastmod>2023-10-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
 
     
     <url>
@@ -157,6 +180,13 @@
     
     <url>
         <loc>http://blue-blog.tech/categories/%E8%BD%AC%E8%BD%BD/</loc>
+        <lastmod>2023-10-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+    
+    <url>
+        <loc>http://blue-blog.tech/categories/%E6%8A%80%E6%9C%AF/</loc>
         <lastmod>2023-10-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

@@ -1,3 +1,4 @@
+http://blue-blog.tech/2023/10/29/tech/npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/
 http://blue-blog.tech/2016/10/13/log/%E3%80%8A%E6%9D%80%E7%94%9F%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/
 http://blue-blog.tech/2017/05/09/reproduce/%E4%BA%8E%E5%AE%99%EF%BC%9A%E6%88%91%E4%BB%AC%E8%BF%99%E4%B8%80%E4%BB%A3%E4%BA%BA%E7%9A%84%E5%9B%B0%E6%83%91/
 http://blue-blog.tech/2017/05/09/reproduce/Charles%20Wang%E8%AF%B4/
@@ -15,6 +16,9 @@ http://blue-blog.tech/tags/%E7%94%B5%E5%BD%B1/
 http://blue-blog.tech/tags/%E9%9F%B3%E4%B9%90/
 http://blue-blog.tech/tags/%E6%9D%8E%E5%BF%97/
 http://blue-blog.tech/tags/%E6%B0%91%E8%B0%A3/
+http://blue-blog.tech/tags/npm/
+http://blue-blog.tech/tags/%E5%91%BD%E4%BB%A4/
 http://blue-blog.tech/categories/%E8%AE%B0%E5%BD%95/
 http://blue-blog.tech/categories/%E8%BD%AC%E8%BD%BD/
+http://blue-blog.tech/categories/%E6%8A%80%E6%9C%AF/
 http://blue-blog.tech/categories/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/
