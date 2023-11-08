@@ -1,3 +1,4 @@
+http://blue-blog.tech/2023/11/08/tech/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/
 http://blue-blog.tech/2023/11/08/tech/%E5%85%B3%E4%BA%8EJVM/
 http://blue-blog.tech/2016/10/13/log/%E3%80%8A%E6%9D%80%E7%94%9F%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/
 http://blue-blog.tech/2017/05/09/log/%E6%A2%B5%E9%AB%98%E5%85%88%E7%94%9F/
@@ -13,13 +14,15 @@ http://blue-blog.tech/categories/index.html
 http://blue-blog.tech/tags/index.html
 http://blue-blog.tech/about/index.html
 http://blue-blog.tech/
+http://blue-blog.tech/tags/%E7%94%B5%E5%BD%B1/
 http://blue-blog.tech/tags/%E9%9F%B3%E4%B9%90/
 http://blue-blog.tech/tags/%E6%9D%8E%E5%BF%97/
 http://blue-blog.tech/tags/%E6%B0%91%E8%B0%A3/
-http://blue-blog.tech/tags/%E7%94%B5%E5%BD%B1/
 http://blue-blog.tech/tags/npm/
 http://blue-blog.tech/tags/%E5%91%BD%E4%BB%A4/
 http://blue-blog.tech/tags/JVM/
+http://blue-blog.tech/tags/%E5%8D%9A%E5%AE%A2/
+http://blue-blog.tech/tags/%E5%BB%BA%E7%AB%99/
 http://blue-blog.tech/categories/%E8%AE%B0%E5%BD%95/
 http://blue-blog.tech/categories/%E8%BD%AC%E8%BD%BD/
 http://blue-blog.tech/categories/%E7%BD%91%E7%AB%99%E6%94%B6%E8%97%8F/
